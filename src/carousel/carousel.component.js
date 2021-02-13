@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, ScrollView, Image, Dimensions, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Dimensions, Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 const { width } = Dimensions.get('window');
 
 class RNCarousel extends React.PureComponent {
@@ -62,6 +62,7 @@ class RNCarousel extends React.PureComponent {
       contentContainerStyle,
       indicatorContainerStyle,
       indicatorStyle,
+      isLocal,
       isCustomCarouselContent,
       carouselContent,
     } = this.props;
@@ -83,7 +84,7 @@ class RNCarousel extends React.PureComponent {
           <View style={styles.carouselContainer}>
             <View style={styles.carouselContent}>
               {!isCustomCarouselContent && data && data.length > 0 && data.map((item, index) => {
-                return <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={{ uri: item.url }} />;
+                return <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={isLocal ? require(item.loc) : { uri: item.url }} />;
               })}
               {
                 isCustomCarouselContent && <>{carouselContent}</>
@@ -125,6 +126,7 @@ RNCarousel.propTypes = {
   showArrows: PropTypes.bool,
   showIndicator: PropTypes.bool,
   isCustomCarouselContent: PropTypes.bool,
+  isLocal: PropTypes.bool,
   showsHorizontalScrollIndicator: PropTypes.bool,
   indicatorStyle: PropTypes.object,
   contentContainerStyle: PropTypes.object,
@@ -143,6 +145,7 @@ RNCarousel.defaultProps = {
   showArrows: true,
   showIndicator: true,
   isCustomCarouselContent: false,
+  isLocal: true,
   showsHorizontalScrollIndicator: false,
   indicatorStyle: {},
   contentContainerStyle: {},
@@ -150,8 +153,6 @@ RNCarousel.defaultProps = {
 };
 
 export default RNCarousel;
-
-import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
