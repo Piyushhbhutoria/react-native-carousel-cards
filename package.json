@@ -1,6 +1,6 @@
 {
-  "name": "react-native-carousel-cards",
-  "version": "1.2.1",
+  "name": "@imidiotic/react-native-carousel-cards",
+  "version": "1.0.0",
   "description": "Carousel images in react native (suports both Android and iOS)",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heiisenberrg/react-native-carousel-cards.git"
+    "url": "https://github.com/Piyushhbhutoria/react-native-carousel-cards.git"
   },
   "keywords": [
     "react-native",
+    "carousel",
     "carousel images",
     "react-native carousel",
     "react-native carousel cards",
