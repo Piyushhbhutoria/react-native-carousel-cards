@@ -3,7 +3,7 @@ import React from 'react';
 import { Dimensions, Image, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 const { width } = Dimensions.get('window');
 
-class RNCarousel extends React.PureComponent {
+class RNCarousel extends React.Component {
   intervalId = '';
 
   state = {
@@ -85,7 +85,7 @@ class RNCarousel extends React.PureComponent {
             <View style={styles.carouselContent}>
               {!isCustomCarouselContent && data && data.length > 0 && data.map((item, index) => {
                 return (isLocal ?
-                  <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={item.loc} /> :
+                  <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={item.url} /> :
                   <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={{ uri: item.url }} />);
               })}
               {
