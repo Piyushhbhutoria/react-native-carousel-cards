@@ -1,6 +1,6 @@
 {
   "name": "examples",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-carousel-cards": "file:../react-native-carousel-cards-1.0.0.tgz"
+    "@imidiotic/react-native-carousel-cards": "file:../imidiotic-react-native-carousel-cards-1.0.0.tgz"
   },
   "devDependencies": {
     "@babel/core": "7.8.4",

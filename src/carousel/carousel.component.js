@@ -84,7 +84,9 @@ class RNCarousel extends React.PureComponent {
           <View style={styles.carouselContainer}>
             <View style={styles.carouselContent}>
               {!isCustomCarouselContent && data && data.length > 0 && data.map((item, index) => {
-                return <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={isLocal ? require(item.loc) : { uri: item.url }} />;
+                return (isLocal ?
+                  <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={item.loc} /> :
+                  <Image key={`index-images-${index}`} style={{ resizeMode: imageResizeMode, height: height, width: width }} source={{ uri: item.url }} />);
               })}
               {
                 isCustomCarouselContent && <>{carouselContent}</>

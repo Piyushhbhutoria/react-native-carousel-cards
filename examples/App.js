@@ -6,12 +6,12 @@
  * @flow
  */
 
+import { RNCarousel } from '@imidiotic/react-native-carousel-cards';
 import React from 'react';
 import {
   StatusBar, StyleSheet,
   Text, View
 } from 'react-native';
-import { RNCarousel } from 'react-native-carousel-cards';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default class App extends React.Component {
@@ -33,10 +33,10 @@ export default class App extends React.Component {
         <RNCarousel
           isLocal
           data={[
-            { loc: "assests/image1.jpg" },
-            { loc: "assests/image2.jpg" },
-            { loc: "assests/image3.jpg" },
-            { loc: "assests/image4.jpg" },
+            { loc: require("./assets/image1.jpg") },
+            { loc: require("./assets/image2.jpg") },
+            { loc: require("./assets/image3.jpg") },
+            { loc: require("./assets/image4.jpg") },
           ]} />
       </>
     )
